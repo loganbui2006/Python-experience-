@@ -12,8 +12,8 @@ The system processes input data containing drink definitions and customer orders
 - Membership tier breakdown showing revenue distribution across customer segments
 
 ## Function Explanations
-read_drinks() -> dict
-**Purpose:** Reads and stores the drink menu configuration from user input.
+read_drinks() -> dict  
+**Purpose:** Reads and stores the drink menu configuration from user input.  
 **Process:**
 - Reads the number of drink types from the first input line
 - For each drink entry, parses the comma-separated format containing drink name and price
