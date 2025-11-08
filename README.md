@@ -12,20 +12,28 @@ The system processes input data containing drink definitions and customer orders
 - Membership tier breakdown showing revenue distribution across customer segments
 
 ## Function Explanations
-read_drinks() -> dict  
-**Purpose:** Reads and stores the drink menu configuration from user input.  
-**Process:**
+**1. read_drinks() -> dict**  
+Purpose: Reads and stores the drink menu configuration from user input.  
+Process:
 - Reads the number of drink types from the first input line
 - For each drink entry, parses the comma-separated format containing drink name and price
 - Stores all drinks in a dictionary mapping drink names (as keys) to their prices (as float values)
-- Returns the complete drink menu dictionary for use in order processing
+- Returns the complete drink menu dictionary for use in order processing  
 
-parse_order(order_str: str, drinks: dict) -> tuple  
-**Purpose:** Extracts and validates individual customer order information from input strings.  
-**Process:**  
+**2. parse_order(order_str: str, drinks: dict) -> tuple**  
+Purpose: Extracts and validates individual customer order information from input strings.  
+Process:
 - Splits the order string by commas into individual components
 - Extracts customer email address and membership tier (converting to lowercase for consistency)
 - Processes the list of purchased drinks, counting occurrences of each valid drink
 - Validates each drink against the available menu, ignoring any invalid drink names
-- Returns a tuple containing email, membership level, and a dictionary of drink quantities
+- Returns a tuple containing email, membership level, and a dictionary of drink quantities  
+**3. calculate_total(items: dict, drinks: dict, membership: str) -> float**
+Purpose: Computes the final order total after applying membership-based discounts.
+Process:
+- Calculates the subtotal by summing the product of each drink's price and quantity
+- Applies tier-specific discounts: 10% for gold members, 5% for silver members, no discount for regular customers
+- Rounds the final amount to 2 decimal places for proper currency formatting
+- Returns the discounted order total
+
 
