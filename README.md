@@ -19,3 +19,13 @@ read_drinks() -> dict
 - For each drink entry, parses the comma-separated format containing drink name and price
 - Stores all drinks in a dictionary mapping drink names (as keys) to their prices (as float values)
 - Returns the complete drink menu dictionary for use in order processing
+
+parse_order(order_str: str, drinks: dict) -> tuple  
+**Purpose:** Extracts and validates individual customer order information from input strings.  
+**Process:**  
+- Splits the order string by commas into individual components
+- Extracts customer email address and membership tier (converting to lowercase for consistency)
+- Processes the list of purchased drinks, counting occurrences of each valid drink
+- Validates each drink against the available menu, ignoring any invalid drink names
+- Returns a tuple containing email, membership level, and a dictionary of drink quantities
+
