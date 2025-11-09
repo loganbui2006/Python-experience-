@@ -1,0 +1,7 @@
+3
+latte,4.50
+cappuccino,3.99
+espresso,2.80
+2
+John Doe,john@email.com,gold,latte,latte,cappuccino
+Jane Smith,jane@mail.com,silver,espresso,espresso,espresso,latte
