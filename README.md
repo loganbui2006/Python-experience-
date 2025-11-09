@@ -27,13 +27,39 @@ Process:
 - Extracts customer email address and membership tier (converting to lowercase for consistency)
 - Processes the list of purchased drinks, counting occurrences of each valid drink
 - Validates each drink against the available menu, ignoring any invalid drink names
-- Returns a tuple containing email, membership level, and a dictionary of drink quantities  
+- Returns a tuple containing email, membership level, and a dictionary of drink quantities    
+
 **3. calculate_total(items: dict, drinks: dict, membership: str) -> float**
 Purpose: Computes the final order total after applying membership-based discounts.
 Process:
 - Calculates the subtotal by summing the product of each drink's price and quantity
 - Applies tier-specific discounts: 10% for gold members, 5% for silver members, no discount for regular customers
 - Rounds the final amount to 2 decimal places for proper currency formatting
-- Returns the discounted order total
+- Returns the discounted order total  
+**4.** generate_report() -> None  
+Purpose: Orchestrates the entire sales reporting process and generates the formatted output.
+Process:
 
+**a.** Data Collection Phase:  
+- Calls read_drinks() to load the drink menu
+- Reads the number of customer orders and processes each order line    
+
+**b.** Order Processing Phase:
+- For each order, calls parse_order() to extract order details
+- Uses calculate_total() to compute individual order totals  
+
+**c.** Aggregates data across three dimensions:  
+- drink_counts: Total quantity sold per drink type
+- user_spending: Cumulative spending per customer
+- tier_totals: Revenue breakdown by membership tier    
+
+**d.** Analysis & Ranking Phase:
+- Implements custom sorting to identify top 2 drinks by quantity sold (with alphabetical tie-breaking)
+- Implements custom sorting to identify top 2 customers by total spending (with email tie-breaking)
+- Calculates overall statistics: total sales and average order value
+  
+**e.** Report Generation Phase:  
+- Outputs all results in the specified format with proper alignment
+- Formats monetary values to 2 decimal places and percentages to 1 decimal place
+- Ensures consistent capitalization and spacing throughout the report
 
