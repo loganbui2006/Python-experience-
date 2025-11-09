@@ -1,0 +1,11 @@
+4
+latte,4.50
+cappuccino,3.99
+espresso,2.80
+mocha,5.20
+5
+John,john@cafe.com,gold,latte,latte,cappuccino
+Jane,jane@brew.com,silver,espresso,espresso,espresso,latte
+Bob,bob@beans.com,none,mocha,mocha
+Alice,alice@roast.com,gold,cappuccino,cappuccino,latte
+Eve,eve@grind.org,silver,mocha
